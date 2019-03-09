@@ -11,6 +11,10 @@
     margin: 25px;
 
     justify-content: space-evenly;
+
+    border: 1px solid gold;
+    box-shadow: 3px 3px 7px 0px black;
+
 }
 
 .character-img{
@@ -19,6 +23,7 @@
     height: 200px;
     width: 200px;
     color: white;
+
 }
 
 .character-box{
@@ -64,4 +69,22 @@
     line-height: 15px;
     margin: 3px;
     color: gray;
+}
+
+.bigButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    margin: 25px;
+    width: 500px;
+    font-size: 36px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
 }

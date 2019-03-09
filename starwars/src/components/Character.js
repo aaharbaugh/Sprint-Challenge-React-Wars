@@ -9,8 +9,6 @@ class Character extends Component {
         }
     };
 
-
-
     componentDidMount(){
         this.getImage(`https://cdn.rawgit.com/akabab/starwars-api/0.2.1/api/id/${this.props.character.url.match( /\d+/ )[0]}.json`)
     }
