@@ -7,8 +7,11 @@ export default function CharacterList(props) {
     return (
         <div className="character-list">
             {props.characters.map(singleChar => {
-                return <Character character={singleChar} />;
+                return <Character character={singleChar} key={singleChar.name}/>;
             })}
+            <div>
+                <div onClick={props.nextPageFunc}>Next</div>
+            </div>
         </div>
     );
 }

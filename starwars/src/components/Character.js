@@ -3,10 +3,9 @@ import './StarWars.css';
 
 class Character extends Component {
     constructor(props){
-        super();
+        super(props);
         this.state = {
-            image: '',
-            id: 0
+            info: '',
         }
     };
 
@@ -22,7 +21,7 @@ class Character extends Component {
             return res.json();
             })
             .then(data => {
-            this.setState({ image: data.image });
+            this.setState({ info: data });
             })
             .catch(err => {
             throw new Error(err);
@@ -30,9 +29,40 @@ class Character extends Component {
     }
 
     render(){
+
+        const inlineStyle = {
+            background: `url(${this.state.info.image}) no-repeat`
+        }
+
         return (
             <div className="character">
-                <img className="character-img" src={this.state.image}></img>
+                <div className="character-img" 
+                style={inlineStyle}>
+
+                </div>
+                <div className="character-box">
+                        <div className="character-name">
+                            <h2>{this.props.character.name}</h2>
+                        </div>
+                        <div className="character-legend">
+                            <div className="left">
+                                <h3>Eye Color:</h3>
+                                <h3>BirthYear: </h3>
+                                <h3>Height:</h3>
+                                <h3>Skin Color:</h3>
+                                <h3>Species</h3>
+                            </div>
+                            <div className="right">
+                                <h3>{this.props.character.eye_color}</h3>
+                                <h3>{this.props.character.birth_year}</h3>
+                                <h3>{this.props.character.height}</h3>
+                                <h3>{this.props.character.skin_color}</h3>
+                                <h3>{this.state.info.species}</h3>
+                            </div>
+                        </div>
+                </div>           
+                
+
             </div>
         )
     }

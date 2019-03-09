@@ -7,12 +7,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      currentPage: 1
     };
   }
 
   componentDidMount() {
-    this.getCharacters('https://swapi.co/api/people/');
+    this.getCharacters(`https://swapi.co/api/people/?page=${this.state.currentPage}`);
   }
 
   getCharacters = URL => {
@@ -25,17 +26,29 @@ class App extends Component {
       })
       .then(data => {
         this.setState({ starwarsChars: data.results });
+        console.log(data)
       })
       .catch(err => {
         throw new Error(err);
       });
   };
 
+  nextPage = () => {
+    this.setState(prevState => {
+      let newNumber = prevState.currentPage + 1
+      console.log(newNumber)
+      return {
+        currentPage: newNumber
+      }
+    })
+    this.getCharacters(`https://swapi.co/api/people/?page=${this.state.currentPage}`);
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        <CharacterList characters={this.state.starwarsChars} />
+        <CharacterList characters={this.state.starwarsChars} nextPageFunc={this.nextPage}/>
       </div>
     );
   }
