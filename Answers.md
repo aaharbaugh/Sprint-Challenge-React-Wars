@@ -1,7 +1,3 @@
-# Answers
-
-1.  What is React JS and what problems does it try and solve?
-
     React JS solves the problem of having a large and complex DOM with a bunch of components on top of a large database of information. It allows developers to create components that display custom information and update in realitime when changes happen. Every user can potentially see a different custom element displayed to them. 
 
 1.  What does it mean to _think_ in react?

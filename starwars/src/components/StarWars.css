@@ -1,0 +1,90 @@
+.character-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.character{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    margin: 25px;
+
+    justify-content: space-evenly;
+
+    border: 1px solid gold;
+    box-shadow: 3px 3px 7px 0px black;
+
+}
+
+.character-img{
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height: 200px;
+    width: 200px;
+    color: white;
+
+}
+
+.character-box{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: white;
+    padding: 5px;
+}
+.character-legend{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+.character-name h2{
+    font-size: 36px;
+    margin: 15px;
+}
+
+.left{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 200px;
+}
+
+.left h3{
+    font-size: 16px;
+    line-height: 15px;
+    margin: 3px;
+}
+
+.right{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 200px;
+}
+
+.right h3{
+    font-size: 16px;
+    line-height: 15px;
+    margin: 3px;
+    color: gray;
+}
+
+.bigButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    margin: 25px;
+    width: 500px;
+    font-size: 36px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
